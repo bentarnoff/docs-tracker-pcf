@@ -143,10 +143,11 @@ On average, an active user consumes ~23KB of DB storage and ~100KB of blobstore 
 Given the following scenario: Pivotal Tracker was configured to use MySQL for PCF, and end-users have data stored in Pivotal Tracker (projects, stories, etc.). If Pivotal Tracker is subsequently reconfigured to use an external database in Ops Manager, the MySQL data will be ***automatically deleted*** upon the next installation in Ops Manager. Be sure to migrate the existing database to the new, external database ***prior*** to doing this. Please work with your Pivotal Representative for more details.
 
 
-### Migrating from Riak CS for PCF to External Blobstore
+### Data Loss When Migrating from Riak CS for PCF to External Blobstore
+
 Given the following scenario: Pivotal Tracker was configured to use Riak CS for PCF, and end-users have data stored in Pivotal Tracker (specifically, attachment uploads are stored in the blobstore). If Pivotal Tracker is subsequently reconfigured to use an external blobstore in Ops Manager, the Riak CS data will be ***automatically deleted*** upon the next installation in Ops Manager. Be sure to migrate any blobstore objects that you want to preserve to the new blobstore ***prior*** to doing this. Please work with your Pivotal Representative for more details.
 
-
+<p class="note"><strong>Note</strong>: Riak CS for PCF is deprecated and availability is restricted to existing customers. Contact <a href="https://pivotal.io/support">Support</a> for more information.</p>
 
 ## Installation Prerequisites
 
@@ -217,7 +218,10 @@ This specifies the number of Elastic Runtime application instances to use for Pi
 ### Blobstore Config
 
 #### Riak CS Service
+
 By default, Pivotal Tracker uses a Riak CS for PCF service instance to store file uploads attached to Pivotal Tracker Stories. Specify the Riak CS service plan to use when provisioning the Pivotal Tracker blobstore.
+
+<p class="note"><strong>Note</strong>: Riak CS for PCF is deprecated and availability is restricted to existing customers. Contact <a href="https://pivotal.io/support">Support</a> for more information.</p>
 
 #### External Blobstore
 
